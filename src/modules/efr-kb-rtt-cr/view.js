@@ -57,13 +57,13 @@ export class View {
                 this.printStruk = "";
                 this.printStruk += "<table style='width:88%;'>";
                 this.printStruk += "    <tr style='height:20px;'>";
-                this.printStruk += "        <td colspan='3' class='text-left' style='height:15px;'><b> PT. TABOR ANDALAN RETAILINDO </b> </td>";
+                this.printStruk += "        <td colspan='3' class='text-left' style='height:15px;'><b> PT. BATEEQ RETAILINDO UTAMA </b> </td>";
                 this.printStruk += "    </tr>";
                 this.printStruk += "    <tr style='height:20px;'>";
-                this.printStruk += "        <td colspan='3' class='text-left' style='height:15px;'><b> equity tower 15C JL JEND SUDIRMAN KAV. 52-53 </b></td>";
+                this.printStruk += "        <td colspan='3' class='text-left' style='height:15px;'><b> Jln Merapi No. 23 RT. 000 RW. 000 Banaran,  </b></td>";
                 this.printStruk += "    </tr>";
                 this.printStruk += "    <tr style='height:20px;'>";
-                this.printStruk += "        <td colspan='3' class='text-left' style='height:15px;'><b> SENAYAN KEBAYORAN BARU JAKARTA SELATAN DKI JAKARTA </b> </td>";
+                this.printStruk += "        <td colspan='3' class='text-left' style='height:15px;'><b> Grogol Kab. Sukoharjo Jawa Tengah </b> </td>";
                 this.printStruk += "    </tr>";
                 this.printStruk += "    <tr style='height:20px;'>";
                 this.printStruk += "        <td colspan='3' class='text-left' style='height:15px;'><b>TRANSFER STOK </b><br/></td>";
