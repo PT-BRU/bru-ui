@@ -89,11 +89,11 @@ module.exports = [
         moduleId: './modules/customers/index',
         nav: true,
         title: 'Customers',
-        auth: false,
+        auth: true,
         settings: {
             group: "bateeq shop",
             subGroup: "customers",
-            permission: { "C.01": 1, "MRD.01": 1 },
+            permission: { "C.01": 1, "MRD.01": 1},
             iconClass: 'fa fa-dashboard'
         }
     },

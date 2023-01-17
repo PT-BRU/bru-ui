@@ -5,6 +5,7 @@ import { RestService } from '../../utils/rest-service';
 //const serviceUri = '/docs/efr-tb-bbp'; 
 const serviceUriTransferIn = 'transfer-in';
 const serviceUriSPK = 'pkpbj/by-user'
+const serviceUriSPKPending = 'pkpbj/by-user/packingRTP'
 const serviceUriStorages = '/storages';
 
 export class Service extends RestService {
@@ -29,7 +30,8 @@ export class Service extends RestService {
     }
 
     listPending(info) {
-        var endpoint = `${serviceUriSPK}`;
+       // var endpoint = `${serviceUriSPK}`;
+       var endpoint = `${serviceUriSPKPending}`;
         return super.list(endpoint, info);
     }
 
