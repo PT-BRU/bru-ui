@@ -1,4 +1,4 @@
-import {inject} from 'aurelia-framework';
+import {inject,bindable} from 'aurelia-framework';
 import {Service} from "./service";
 import {Router} from 'aurelia-router';
 import moment from 'moment';
@@ -6,6 +6,8 @@ const StorageLoader = require('../../../loader/nstorage-loader');
 
 @inject(Router, Service)
 export class List {
+    @bindable selectedQuantity;
+    quantities = [];
     constructor(router, service) {
         this.service = service;
         this.router = router;
@@ -18,14 +20,21 @@ export class List {
 
     bind(context) {
         this.context = context;
+      
+        this.quantities.push("0");
+        this.quantities.push("> 0");
     }
+    selectedQuantityChanged(newValue, oldValue) {
+        // console.log(newValue);
+        // console.log(this.selectedMonth);
+      }
     
     searching() {
        
         var info = {
             storage : this.storage ? this.storage._id : "",
-            dateFrom : this.dateFrom ? moment(this.dateFrom).format("YYYY-MM-DD") : "",
-            dateTo : this.dateTo ? moment(this.dateTo).format("YYYY-MM-DD") : ""
+          
+            selectedQuantity : this.selectedQuantity
         }
          
         this.service.getStock(info)
@@ -44,8 +53,8 @@ export class List {
     ExportToExcel() {
         var info = {
             storage : this.storage ? this.storage._id : "",
-            dateFrom : this.dateFrom ? moment(this.dateFrom).format("YYYY-MM-DD") : "",
-            dateTo : this.dateTo ? moment(this.dateTo).format("YYYY-MM-DD") : ""
+            
+            selectedQuantity : this.selectedQuantity
       
         }
         this.service.getStockExcel(info);
@@ -61,8 +70,7 @@ export class List {
     
     
     reset() {
-        this.dateFrom = null;
-        this.dateTo = null;
+        this.selectedQuantity = 0;
         this.storage = "";
         this.data = null;
         this.info.total=0;
@@ -82,8 +90,7 @@ export class List {
             page: this.info.page,
             size: this.info.size,
             storage : this.storage ? this.storage._id : "",
-            dateFrom : this.dateFrom ? moment(this.dateFrom).format("YYYY-MM-DD") : "",
-            dateTo : this.dateTo ? moment(this.dateTo).format("YYYY-MM-DD") : ""
+            selectedQuantity : this.selectedQuantity
         } 
         this.service.getStock(args)
         .then(result => {

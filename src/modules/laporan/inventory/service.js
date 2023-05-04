@@ -15,12 +15,12 @@ export class Service extends RestService {
 
     getStock(info) {
         var endpoint = `${uriServices}`;
-
+        console.log(endpoint)
         return super.list(endpoint, info);
     }
 
     getStockExcel(info) {
-        var endpoint = `${uriServices}/download?dateFrom=${info.dateFrom}&dateTo=${info.dateTo}&storage=${info.storage}`;  
+        var endpoint = `${uriServices}/download?SelectedQuantity=${info.selectedQuantity}&storage=${info.storage}`;  
         return super.getXls(endpoint);
     }
 }

@@ -19,8 +19,8 @@
             options.bind="controlOptions">
         </au-autocomplete>
   
-        <au-datepicker label="Tanggal Awal" value.bind="dateFrom"></au-datepicker>
-        <au-datepicker label="Tanggal Akhir" value.bind="dateTo"></au-datepicker>
+        <au-dropdown label="Quantity" value.bind="selectedQuantity"  read-only.bind="readOnly"
+        items.bind="quantities"></au-dropdown>
   
         <div class="form-group">
             <label for="contact" class="col-sm-6 control-label"></label>
