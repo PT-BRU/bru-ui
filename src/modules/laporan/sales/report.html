@@ -1,107 +1,51 @@
 <template>
     <au-input-form title.bind="title" with.bind="context">
-      <style>
-          table>tbody>tr>td {
-              white-space: pre;
-          }
-      </style>
+    <style>
+        table>tbody>tr>td {
+            white-space: pre;
+        }
+    </style>
   
-      <h1 class="page-header">Monitoring Sales</h1>
-  
-      <form class="form-horizontal">
-        <au-autocomplete 
-            value.bind="storage" 
-            label="Storage Name" 
-            loader.bind="storageLoader"
-            placeholder="Cari Nama Storage" 
-            read-only.bind="readOnly" 
-            text.bind="storageView"
-            options.bind="controlOptions">
-        </au-autocomplete>
-  
-        <au-datepicker label="Tanggal Awal" value.bind="dateFrom"></au-datepicker>
-        <au-datepicker label="Tanggal Akhir" value.bind="dateTo"></au-datepicker>
-  
-        <div class="form-group">
-            <label for="contact" class="col-sm-6 control-label"></label>
-            <div class="col-sm-3">
-                <button click.delegate="searching()" class='btn btn-success'>Cari</button>
-                <button click.delegate="reset()" class='btn btn-success'>Reset</button>
-            </div>
+    <h1 class="page-header">Monitoring Sales</h1>
+
+    <form class="form-horizontal">
+    <au-autocomplete 
+        value.bind="storage" 
+        label="Storage Name" 
+        loader.bind="storageLoader"
+        placeholder="Cari Nama Storage" 
+        read-only.bind="readOnly" 
+        text.bind="storageView"
+        options.bind="controlOptions">
+    </au-autocomplete>
+
+    <au-datepicker label="Tanggal Awal" value.bind="dateFrom"></au-datepicker>
+    <au-datepicker label="Tanggal Akhir" value.bind="dateTo"></au-datepicker>
+
+    <div class="form-group">
+        <label for="contact" class="col-sm-6 control-label"></label>
+        <div class="col-sm-3">
+            <button click.delegate="searching()" class='btn btn-success'>Cari</button>
+            <button click.delegate="reset()" class='btn btn-success'>Reset</button>
         </div>
-  
-        <div class="btn-group pull-left">
-            <a click.delegate="ExportToExcel()" class='btn btn-primary'>Excel</a>
-        </div>
-    </form>
-    <br>
-  </br>
-    <div class="table-responsive">
-      <table class="table table-bordered table-hover" border="1" id="myTable">
-          <thead align="center">
-              <tr>
-                  <td>Code</td>
-                  <td>Date</td>
-                  <td>Sub Total</td>
-                  <td>Discount</td>
-                  <td>Grand Total</td>
-                  <td>Store Code</td>
-                  <td>Store Name</td>
-                  <td>Item Code</td>
-                  <td>Item Name</td>
-                   
-                  <td>RO</td>
-                  <td>Quantity</td>
-                  <td>Price</td>
-                  <td>Discount1</td>
-                  <td>Discount2</td>
-                  <td>Discount Nominal</td>
-                  <td>Margin</td>
-                  <td>Spesial Discount</td>
-                  <td>Total</td>
-                  <td>IsReturn</td>
-                  <td>Remark</td>
-                  <td>Payment Type</td>
-                  <td>Bank Name</td>
-                  <td>Card</td>
-              </tr>
-          </thead>
-          <tbody>
-              <require from="../../../lib/number-format-value-converter"></require>
-              <tr repeat.for="item of data">
-                  <td class="text-left">${item.Code}</td>
-                  <td class="text-left">${item.Date}</td>
-                  <td class="text-right">${item.SubTotal}</td>
-                  <td class="text-right">${item.Discount}</td>
-                  <td class="text-right">${item.GrandTotal}</td>
-                  <td class="text-left">${item.StoreCode}</td>
-                  <td class="text-left">${item.StoreName}</td>
-                  <td class="text-left">${item.ItemCode}</td>
-                  <td class="text-left">${item.ItemName}</td>
-                
-                  <td class="text-left">${item.ItemArticleRealizationOrder}</td>
-                  <td class="text-right">${item.Quantity}</td>
-                  <td class="text-right">${item.Price}</td>
-                  <td class="text-right">${item.Discount1}</td>
-                  <td class="text-right">${item.Discount2}</td>
-                  <td class="text-right">${item.DiscountNominal}</td>
-                  <td class="text-right">${item.Margin}</td>
-                  <td class="text-right">${item.SpecialDiscount}</td>
-                  <td class="text-right">${item.Total}</td>
-                  <td class="text-left">${item.IsReturn}</td>
-                  <td class="text-left">${item.Remark}</td>
-                  <td class="text-left">${item.PaymentType}</td>
-                  <td class="text-left">${item.BankName}</td>
-                  <td class="text-left">${item.Card}</td>
-              </tr>
-             
-          </tbody>
-      </table>
-  </div>
-  <div class="alert alert-info text-center" role="alert" if.bind="data.length === 0">
-    Tidak ada data.
-  </div>
-  <hr/>
+    </div>
+
+    <div class="btn-group pull-left">
+        <a click.delegate="ExportToExcel()" class='btn btn-primary'>Excel</a>
+    </div>
+</form>
+<br></br>
+    <au-table
+        view-model.ref="Table"
+        data.bind="loader"
+        columns.bind="columns"
+        page-size="25"
+        options.bind="tableOptions">  
+    </au-table>
+    <div class="alert alert-info text-center" role="alert" if.bind="data.length === 0">
+        Tidak ada data.
+    </div>
+    <hr/>
     </au-input-form>
     <div class="row"></div>
-  </template>
+</template>
