@@ -1,0 +1,35 @@
+<template>
+    <div class="col-md-9">
+      <au-input-form title.bind="title" with.bind="context">
+
+        <au-textbox 
+            label="Kode Koleksi" 
+            placeholder="Kode Koleksi" 
+            value.bind="data.code" 
+            error.bind="error.code"
+            options.bind="customOptions" 
+            read-only.bind="readOnly">
+        </au-textbox>
+
+        <au-textbox 
+            label="Nama Koleksi" 
+            placeholder="Nama Koleksi" 
+            value.bind="data.name" 
+            error.bind="error.name" 
+            options.bind="customOptions"
+            read-only.bind="readOnly">
+        </au-textbox>
+
+        
+        <au-multiline 
+            label="Keterangan" 
+            placeholder="Keterangan" 
+            value.bind="data.Description" 
+            error.bind="error.description" 
+            options.bind="customOptions"
+            read-only.bind="readOnly">
+        </au-multiline>
+        
+      </au-input-form>
+    </div>
+  </template>

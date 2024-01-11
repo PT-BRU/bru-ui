@@ -210,5 +210,122 @@ module.exports = [
     permission: {"C.01": 1 },
     iconClass: ""
   }
-}
+},
+{
+  route: "article-category",
+  name: "article-category",
+  moduleId: "./modules/master/article-category/index",
+  nav: true,
+  title: "Kategori",
+  auth: true,
+  settings: {
+    group: "nmaster",
+    permission: {"C.01": 1 },
+    iconClass: ""
+  }
+},
+{
+  route: "article-style",
+  name: "article-style",
+  moduleId: "./modules/master/article-style/index",
+  nav: true,
+  title: "Style",
+  auth: true,
+  settings: {
+    group: "nmaster",
+    permission: {"C.01": 1 },
+    iconClass: ""
+  }
+},
+{
+  route: "article-process",
+  name: "article-process",
+  moduleId: "./modules/master/article-process/index",
+  nav: true,
+  title: "Proses",
+  auth: true,
+  settings: {
+    group: "nmaster",
+    permission: {"C.01": 1 },
+    iconClass: ""
+  }
+},
+{
+  route: "article-material",
+  name: "article-material",
+  moduleId: "./modules/master/article-material/index",
+  nav: true,
+  title: "Bahan",
+  auth: true,
+  settings: {
+    group: "nmaster",
+    permission: {"C.01": 1 },
+    iconClass: ""
+  }
+},
+{
+  route: "article-material-composition",
+  name: "article-material-composition",
+  moduleId: "./modules/master/article-material-composition/index",
+  nav: true,
+  title: "Komposisi Bahan",
+  auth: true,
+  settings: {
+    group: "nmaster",
+    permission: {"C.01": 1 },
+    iconClass: ""
+  }
+},
+{
+  route: "article-collection",
+  name: "article-collection",
+  moduleId: "./modules/master/article-collection/index",
+  nav: true,
+  title: "Koleksi",
+  auth: true,
+  settings: {
+    group: "nmaster",
+    permission: {"C.01": 1 },
+    iconClass: ""
+  }
+},
+{
+  route: "article-season",
+  name: "article-season",
+  moduleId: "./modules/master/article-season/index",
+  nav: true,
+  title: "Season",
+  auth: true,
+  settings: {
+    group: "nmaster",
+    permission: {"C.01": 1 },
+    iconClass: ""
+  }
+},
+{
+  route: "article-counter",
+  name: "article-counter",
+  moduleId: "./modules/master/article-counter/index",
+  nav: true,
+  title: "Konter",
+  auth: true,
+  settings: {
+    group: "nmaster",
+    permission: {"C.01": 1 },
+    iconClass: ""
+  }
+},
+{
+  route: "article-color",
+  name: "article-color",
+  moduleId: "./modules/master/article-color/index",
+  nav: true,
+  title: "Color",
+  auth: true,
+  settings: {
+    group: "nmaster",
+    permission: {"C.01": 1 },
+    iconClass: ""
+  }
+},
 ];

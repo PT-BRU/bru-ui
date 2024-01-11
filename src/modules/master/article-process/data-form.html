@@ -1,0 +1,34 @@
+<template>
+    <div class="col-md-9">
+      <au-input-form title.bind="title" with.bind="context">
+
+        <au-textbox 
+            label="Kode Proses" 
+            placeholder="Kode Proses" 
+            value.bind="data.code" 
+            error.bind="error.code"
+            options.bind="customOptions" 
+            read-only.bind="readOnly">
+        </au-textbox>
+
+        <au-textbox 
+            label="Nama Proses" 
+            placeholder="Nama Proses" 
+            value.bind="data.name" 
+            error.bind="error.name" 
+            options.bind="customOptions"
+            read-only.bind="readOnly">
+        </au-textbox>
+
+        <au-multiline 
+            label="Keterangan" 
+            placeholder="Keterangan" 
+            value.bind="data.Description" 
+            error.bind="error.description" 
+            options.bind="customOptions"
+            read-only.bind="readOnly">
+        </au-multiline>
+        
+      </au-input-form>
+    </div>
+  </template>
