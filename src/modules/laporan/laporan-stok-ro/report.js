@@ -3,9 +3,6 @@ import { Router } from 'aurelia-router';
 import { Service } from './service';
 import { Container } from 'aurelia-dependency-injection';
 import { Config } from "aurelia-api"
-import { Item } from '../../expedition/payment-disposition-note/templates/item';
-import { ItemFooter } from '../../accounting/others-expenditure-proof-document/templates/item-footer';
-
 var Itemloader = require('../../../loader/finished-goods-loader')
 
 @inject(Router, Service)
