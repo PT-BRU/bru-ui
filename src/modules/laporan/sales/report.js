@@ -119,7 +119,7 @@ export class List {
         this.error = {};
         if (Object.getOwnPropertyNames(this.error).length === 0) {
             this.flag = true;
-            this.Table.refresh();
+            //this.Table.refresh();
         }
     }
 
