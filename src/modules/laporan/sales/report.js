@@ -84,7 +84,7 @@ export class List {
             collection : this.collection ? this.collection._id : "",
             season : this.season ? this.season._id : "",
             color : this.color ? this.color._id : "",
-            sizes : this.sizes ? this.sizes._id : "",
+            sizes : this.sizes ? this.sizes.Size : "",
       
         }
         this.service.getSalesExcel(info);
@@ -118,7 +118,7 @@ export class List {
         this.error = {};
         if (Object.getOwnPropertyNames(this.error).length === 0) {
             this.flag = true;
-            //this.Table.refresh();
+            this.Table.refresh();
         }
     }
 
@@ -138,7 +138,7 @@ export class List {
                 collection : this.collection ? this.collection._id : "",
                 season : this.season ? this.season._id : "",
                 color : this.color ? this.color._id : "",
-                sizes : this.sizes ? this.sizes._id : "",
+                sizes : this.sizes ? this.sizes.Size : "",
             } 
         return this.flag ?
         (
