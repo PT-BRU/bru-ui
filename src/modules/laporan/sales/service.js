@@ -4,15 +4,15 @@ import { RestService } from '../../../utils/rest-service';
 import { Container } from 'aurelia-dependency-injection';
 import { Config } from "aurelia-api";
 
-const serviceUri = "inventories/monitoring/get-sales-all";
+const serviceUri = "sales-docs/monitoring/get-sales-all";
 
 export class Service extends RestService {
 
     constructor(http, aggregator, config, api) {
-        super(http, aggregator, config, "inventory");
+        super(http, aggregator, config, "sales");
     }
 
-    getMovement(info) {
+    getSales(info) {
         var endpoint = `${serviceUri}`;
         return super.list(endpoint, info);
     }

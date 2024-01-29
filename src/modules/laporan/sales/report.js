@@ -75,7 +75,7 @@ export class List {
     
     ExportToExcel() {
         var info = {
-            unit : this.unit ? this.unit.Id : "",
+            storage : this.storage ? this.storage._id : "",
             dateFrom : this.dateFrom ? moment(this.dateFrom).format("YYYY-MM-DD") : "",
             dateTo : this.dateTo ? moment(this.dateTo).format("YYYY-MM-DD") : "",
             group : this.group? this.group._id : "",
@@ -84,7 +84,7 @@ export class List {
             collection : this.collection ? this.collection._id : "",
             season : this.season ? this.season._id : "",
             color : this.color ? this.color._id : "",
-            sizes : this.sizes ? this.sizes._id : "",
+            sizes : this.sizes ? this.sizes.Size : "",
       
         }
         this.service.generateExcel(info);
@@ -119,7 +119,7 @@ export class List {
         this.error = {};
         if (Object.getOwnPropertyNames(this.error).length === 0) {
             this.flag = true;
-            //this.Table.refresh();
+            this.Table.refresh();
         }
     }
 
@@ -139,7 +139,7 @@ export class List {
                 collection : this.collection ? this.collection._id : "",
                 season : this.season ? this.season._id : "",
                 color : this.color ? this.color._id : "",
-                sizes : this.sizes ? this.sizes._id : "",
+                sizes : this.sizes ? this.sizes.Size : "",
             } 
         return this.flag ?
         (
