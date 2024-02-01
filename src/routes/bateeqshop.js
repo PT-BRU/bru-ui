@@ -53,6 +53,19 @@ module.exports = [
 			permission: { "C.01": 1, "MRD.01": 1 },
             iconClass: "fa fa-dashboard",
         }
+    },{
+        route: 'laporan-stok-period',
+        name: 'laporan-stok-period',
+        moduleId: './modules/laporan/stock-period/index',
+        nav: true,
+        title: 'Laporan Stok per Periode',
+        auth: true,
+        settings: {
+            group: "bateeq shop",
+            subGroup: "Report",
+			permission: { "C.01": 1, "MRD.01": 1 },
+            iconClass: "fa fa-dashboard",
+        }
     },
     {
         route: "/promotion",

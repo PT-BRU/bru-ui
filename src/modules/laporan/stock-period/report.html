@@ -6,7 +6,7 @@
         }
     </style>
   
-    <h1 class="page-header">Monitoring Sales</h1>
+    <h1 class="page-header">Laporan Stock per Periode</h1>
 
     <form class="form-horizontal">
     <au-autocomplete 
@@ -15,20 +15,15 @@
         loader.bind="storageLoader"
         placeholder="Cari Nama Storage" 
         read-only.bind="readOnly" 
+        error.bind="error.storage"
         text.bind="storageView"
         options.bind="controlOptions">
     </au-autocomplete>
 
     <au-datepicker 
-        label="Tanggal Awal" 
-        value.bind="dateFrom" 
-        options.bind="controlOptions">
-    </au-datepicker>
-
-    <au-datepicker 
-        label="Tanggal Akhir" 
+        label="Tanggal Periode" 
         value.bind="dateTo" 
-        options.bind="controlOptions">
+        options.bind="controlOptions" >
     </au-datepicker>
 
     <au-autocomplete        
@@ -87,7 +82,7 @@
         options.bind="controlOptions"                     
         text="Size" read-only.bind="readOnly">
     </au-autocomplete>
-    
+
     <div class="form-group">
         <label for="contact" class="col-sm-6 control-label"></label>
         <div class="col-sm-3">
@@ -105,7 +100,7 @@
         view-model.ref="Table"
         data.bind="loader"
         columns.bind="columns"
-        page-size="25"
+        page-size="100"
         options.bind="tableOptions">  
     </au-table>
     <div class="alert alert-info text-center" role="alert" if.bind="data.length === 0">
