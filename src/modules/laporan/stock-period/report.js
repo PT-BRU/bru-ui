@@ -44,6 +44,8 @@ export class List {
         { field: "ItemName", title: "Nama", valign: "top" },
         { field: "Color", title: "Color", valign: "top" },
         { field: "Size", title: "Size", valign: "top" },
+        { field: "Style", title: "Style", valign: "top" },
+        { field: "Group", title: "Group", valign: "top" },
         { field: "Quantity", title: "Qty", valign: "top" },
         { field: "ReceivedDate", title: "Received Date", valign: "top" },
         { field: "Month", title: "Month", valign: "top" },
