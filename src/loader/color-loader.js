@@ -10,6 +10,6 @@ module.exports = function (keyword, filter) {
 
     return endpoint.find(resource, { keyword: keyword })
         .then(results => {
-            return results.data.data;
+            return results.data;
         });
 }
