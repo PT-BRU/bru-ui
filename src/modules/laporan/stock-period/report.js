@@ -3,6 +3,13 @@ import {Service} from "./service";
 import {Router} from 'aurelia-router';
 import moment from 'moment';
 const StorageLoader = require('../../../loader/nstorage-loader');
+var SeasonsLoader = require('../../../loader/season-loader');
+var CollectionsLoader = require('../../../loader/collection-loader');
+var CategoriesLoader = require('../../../loader/category-loader');
+var CountersLoader = require('../../../loader/counter-loader');
+var StyleLoader = require('../../../loader/article-style-loader');
+var SizeLoader = require('../../../loader/size-loader');
+var ColorLoader = require('../../../loader/color-loader');
 
 @inject(Router, Service)
 export class List {
@@ -37,6 +44,8 @@ export class List {
         { field: "ItemName", title: "Nama", valign: "top" },
         { field: "Color", title: "Color", valign: "top" },
         { field: "Size", title: "Size", valign: "top" },
+        { field: "Style", title: "Style", valign: "top" },
+        { field: "Group", title: "Group", valign: "top" },
         { field: "Quantity", title: "Qty", valign: "top" },
         { field: "ReceivedDate", title: "Received Date", valign: "top" },
         { field: "Month", title: "Month", valign: "top" },
@@ -52,9 +61,14 @@ export class List {
     ExportToExcel() {
         var info = {
             storage : this.storage ? this.storage._id : "",
-            // dateFrom : this.dateFrom ? moment(this.dateFrom).format("YYYY-MM-DD") : "",
-            dateTo : this.dateTo ? moment(this.dateTo).format("YYYY-MM-DD") : ""
-      
+            dateTo : this.dateTo ? moment(this.dateTo).format("YYYY-MM-DD") : "",
+            group : this.group? this.group._id : "",
+            category : this.category ? this.category._id : "",
+            style : this.style ? this.style._id : "",
+            collection : this.collection ? this.collection._id : "",
+            season : this.season ? this.season._id : "",
+            color : this.color ? this.color._id : "",
+            sizes : this.sizes ? this.sizes.Size : "",
         }
         this.service.getStockExcel(info);
     }
@@ -67,6 +81,15 @@ export class List {
     
     }
     
+    controlOptions = {
+        label: {
+            length: 4
+        },
+        control: {
+            length: 5
+        }
+    }
+
     reset() {
         this.dateFrom = null;
         this.dateTo = null;
@@ -77,11 +100,11 @@ export class List {
 
     searching() {
         this.error = {};
-        if(!this.storage){
-            this.error={
-                storage: "Storage harus diisi"
-            };
-        }
+        // if(!this.storage){
+        //     this.error={
+        //         storage: "Storage harus diisi"
+        //     };
+        // }
         if (Object.getOwnPropertyNames(this.error).length === 0) {
             this.flag = true;
             this.Table.refresh();
@@ -96,8 +119,14 @@ export class List {
                 page: parseInt(info.offset / info.limit, 10) + 1,
                 size: info.limit,
                 storage : this.storage ? this.storage._id : "",
-                // dateFrom : this.dateFrom ? moment(this.dateFrom).format("YYYY-MM-DD") : "",
-                dateTo : this.dateTo ? moment(this.dateTo).format("YYYY-MM-DD") : ""
+                dateTo : this.dateTo ? moment(this.dateTo).format("YYYY-MM-DD") : "",
+                group : this.group? this.group._id : "",
+                category : this.category ? this.category._id : "",
+                style : this.style ? this.style._id : "",
+                collection : this.collection ? this.collection._id : "",
+                season : this.season ? this.season._id : "",
+                color : this.color ? this.color._id : "",
+                sizes : this.sizes ? this.sizes.Size : "",
             } 
         return this.flag ?
         (
@@ -117,5 +146,27 @@ export class List {
         ) : { total: 0, data: [] };
     }
     
+    get CollectionsLoader() {
+        return CollectionsLoader;
+    }
+    get CountersLoader() {
+        return CountersLoader;
+    }
+    get SeasonsLoader() {
+        return SeasonsLoader;
+    }
+
+    get CategoriesLoader() {
+        return CategoriesLoader;
+    } 
+    get StyleLoader() {
+        return StyleLoader;
+    }
+    get SizeLoader() {
+        return SizeLoader;
+    } 
+    get ColorLoader() {
+        return ColorLoader;
+    } 
 }
         

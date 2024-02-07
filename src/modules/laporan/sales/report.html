@@ -19,9 +19,75 @@
         options.bind="controlOptions">
     </au-autocomplete>
 
-    <au-datepicker label="Tanggal Awal" value.bind="dateFrom"></au-datepicker>
-    <au-datepicker label="Tanggal Akhir" value.bind="dateTo"></au-datepicker>
+    <au-datepicker 
+        label="Tanggal Awal" 
+        value.bind="dateFrom" 
+        options.bind="controlOptions">
+    </au-datepicker>
 
+    <au-datepicker 
+        label="Tanggal Akhir" 
+        value.bind="dateTo" 
+        options.bind="controlOptions">
+    </au-datepicker>
+
+    <au-autocomplete        
+        label="Group"                            
+        value.bind="group"               
+        loader.bind="CountersLoader" 
+        options.bind="controlOptions"                         
+        text="name"  read-only.bind="readOnly">
+    </au-autocomplete>
+
+    <au-autocomplete        
+        label="Kategori"                            
+        value.bind="category"               
+        loader.bind="CategoriesLoader"  
+        options.bind="controlOptions"                         
+        text="name"  read-only.bind="readOnly">
+    </au-autocomplete>
+
+    <au-autocomplete        
+        label="Style"                            
+        value.bind="style"               
+        loader.bind="StyleLoader"              
+        error.bind="error.style"     
+        options.bind="controlOptions"                     
+        text="name"  read-only.bind="readOnly">
+    </au-autocomplete>
+    
+    <au-autocomplete        
+        label="Koleksi"                             
+        value.bind="collection"             
+        loader.bind="CollectionsLoader"  
+        options.bind="controlOptions"                       
+        text="name" read-only.bind="readOnly">
+    </au-autocomplete>
+
+    <au-autocomplete        
+        label="Season"                              
+        value.bind="season"                 
+        loader.bind="SeasonsLoader" 
+        options.bind="controlOptions"                             
+        text="name" read-only.bind="readOnly">
+    </au-autocomplete>
+
+    <au-autocomplete        
+        label="Color"                              
+        value.bind="color"                
+        loader.bind="ColorLoader"    
+        options.bind="controlOptions"                       
+        text="name" read-only.bind="readOnly">
+    </au-autocomplete>
+
+    <au-autocomplete        
+        label="Size"                               
+        value.bind="sizes"                  
+        loader.bind="SizeLoader"  
+        options.bind="controlOptions"                     
+        text="Size" read-only.bind="readOnly">
+    </au-autocomplete>
+    
     <div class="form-group">
         <label for="contact" class="col-sm-6 control-label"></label>
         <div class="col-sm-3">
