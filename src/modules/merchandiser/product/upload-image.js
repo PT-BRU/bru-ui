@@ -11,6 +11,7 @@ var SeasonsLoader = require('../../../loader/season-loader');
 var SubCountersLoader = require('../../../loader/sub-counter-loader');
 var CollectionsLoader = require('../../../loader/collection-loader');
 var CategoriesLoader = require('../../../loader/category-loader');
+var ColorLoader = require('../../../loader/color-loader');
 
 @inject(Router, Service)
 export class Upload {
@@ -98,6 +99,9 @@ export class Upload {
         return CategoriesLoader;
     }
 
+    get ColorLoader() {
+        return ColorLoader;
+    }
 
     controlOptions = {
         label: {
@@ -246,7 +250,6 @@ export class Upload {
     async upload() {
 
         var e = [];
-       
         if (this.dataDestination.length == 0) {
             e["dataDestination"] = "Produk harus dipilih"
             if (this.dataSource.length == 0) {
@@ -286,6 +289,9 @@ export class Upload {
         if (this.data.ro == "" || this.data.ro == undefined) {
             e["ro"] = "Nomor RO harus diisi"
         }
+        if (this.data.color == "" || this.data.color == undefined) {
+            e["color"] = "Nama Warna harus diisi"
+        }
 
         if (Object.keys(e).length > 0) {
             this.error = e;
@@ -294,7 +300,7 @@ export class Upload {
                         var data = {}
                         data.dataDestination = this.dataDestination;
                         data.colorCode = this.color;
-                        data.color = this.article_color;
+                        data.color = this.data.color;
                        // data.imagePath = result.data[0];
                         data.imageFile = this.imageSrc;
                         // data.motifPath = result.data[1];
