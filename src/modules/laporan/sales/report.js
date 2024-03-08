@@ -50,6 +50,7 @@ export class List {
         { field: "SeasonCode", title: "Season Code", valign: "top" },
         { field: "SeasonYear", title: "Season Year", valign: "top" },
         { field: "ItemArticleRealizationOrder", title: "RO/Article", valign: "top" },
+        { field: "TransactionNo", title: "Nomor Transaksi", valign: "top" },
         { field: "ItemName", title: "Name", valign: "top" },
         { field: "Color", title: "Color", valign: "top" },
         { field: "Size", title: "Size", valign: "top" },
