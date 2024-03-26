@@ -19,9 +19,15 @@
         text.bind="storageView"
         options.bind="controlOptions">
     </au-autocomplete>
+    
+    <au-datepicker 
+        label="Tanggal Periode Awal" 
+        value.bind="dateFrom" 
+        options.bind="controlOptions" >
+    </au-datepicker>
 
     <au-datepicker 
-        label="Tanggal Periode" 
+        label="Tanggal Periode Akhir" 
         value.bind="dateTo" 
         options.bind="controlOptions" >
     </au-datepicker>
