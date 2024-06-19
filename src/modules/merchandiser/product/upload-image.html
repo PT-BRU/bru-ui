@@ -34,6 +34,7 @@
         <div class="form-group col-md-4 ${error.imageUpload?'has-error':''}">
             <label class="col-sm-12"><strong>Gambar :</strong></label>
             <div class="col-sm-12">
+                <span class="help-block">${error.imageUpload}</span>
                 <input type="file" id="imageInput" class="center-block" value.bind="imageUpload" accept="image/*" style="width: 60%">
                 <br>
                 <img src.bind="imageSrc" class="center-block" height="auto" width="60%">
