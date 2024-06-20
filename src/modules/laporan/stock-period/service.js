@@ -22,7 +22,7 @@ export class Service extends RestService {
     getStockExcel(info) {
         var endpoint = `${uriServices}/download?dateFrom=${info.dateFrom}&dateTo=${info.dateTo}&storage=${info.storage}
             &style=${info.style}&group=${info.group}&category=${info.category}&collection=${info.collection}
-            &season=${info.season}&color=${info.color}&sizes=${info.sizes}`; 
+            &season=${info.season}&color=${info.color}&sizes=${info.sizes}&zero=${info.zero}`; 
         return super.getXls(endpoint);
     }
 }
