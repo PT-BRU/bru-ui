@@ -23,6 +23,8 @@ export class List {
         size:100,
     };
 
+    QuantityOptions = ["","0",">0"];
+
     bind(context) {
         this.context = context;
     }
@@ -70,6 +72,7 @@ export class List {
             season : this.season ? this.season._id : "",
             color : this.color ? this.color._id : "",
             sizes : this.sizes ? this.sizes.Size : "",
+            zero : this.zero ? this.zero : "",
         }
         this.service.getStockExcel(info);
     }
@@ -129,6 +132,7 @@ export class List {
                 season : this.season ? this.season._id : "",
                 color : this.color ? this.color._id : "",
                 sizes : this.sizes ? this.sizes.Size : "",
+                zero : this.zero ? this.zero : "",
             } 
         return this.flag ?
         (
