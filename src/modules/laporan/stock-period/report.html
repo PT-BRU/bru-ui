@@ -73,6 +73,13 @@
         text="name" read-only.bind="readOnly">
     </au-autocomplete>
 
+    <au-dropdown
+        label="Quantity"
+        value.bind="zero"
+        items.bind="QuantityOptions"
+        options.bind="controlOptions">
+    </au-dropdown>
+<!-- 
     <au-autocomplete        
         label="Color"                              
         value.bind="color"                
